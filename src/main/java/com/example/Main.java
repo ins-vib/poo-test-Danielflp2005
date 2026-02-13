@@ -42,7 +42,7 @@ public class Main {
                     break;
                 case 4:
                     System.out.println();
-                    System.out.println("Puntuacion final" + test.solucionartest());
+                    System.out.println("Puntuacion final: " + test.solucionartest());
                     System.out.println("Gracias por participar!!");
                     seguir = false;
                     break;

@@ -19,21 +19,21 @@ public class Test {
 
     public String getEnunciadoPreguntaActual() {
 
-        if (posicionactual < preguntas.size()) {
-            return preguntas.get(posicionactual).getEnunciado();
+        if (posicionactual < 0 || posicionactual >= preguntas.size()) {
+            return new String();
         }
 
-        return null;
+        return preguntas.get(posicionactual).getEnunciado();
 
     }
 
     public String[] getRespostePreguntaActual() {
 
-        if (posicionactual < preguntas.size()) {
-            return preguntas.get(posicionactual).getRespuestas();
+        if (posicionactual < 0 || posicionactual >= preguntas.size()) {
+            return new String[]{"¡Has acabado el test! pulse 4 para ver los resultados"};
         }
 
-        return null;
+        return preguntas.get(posicionactual).getRespuestas();
 
     }
 
@@ -46,13 +46,18 @@ public class Test {
     public void responder(int respuesta) {
 
         if (posicionactual < preguntas.size()) {
-            contestaciones.add(respuesta);
 
             Preguntas preguntactual = preguntas.get(posicionactual);
+            contestaciones.add(respuesta);
 
-            if (preguntactual.getCorrecta() == respuesta -1 ) {
-                puntuacion++;
+            int numpreguntas = preguntas.size();
+            int correcta = 10 / numpreguntas;
+            int incorrecta = correcta / getRespostePreguntaActual().length;
 
+            if (preguntactual.getCorrecta() == respuesta - 1) {
+                puntuacion += correcta;
+            } else  {
+               puntuacion -= incorrecta;
             }
 
         }
