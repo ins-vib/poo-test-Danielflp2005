@@ -39,6 +39,7 @@ public class Preguntas {
         this.correcta = correcta;
     }
 
+
     @Override
     public String toString() {
         return "Preguntas [enunciado=" + enunciado + ", respuestas=" + Arrays.toString(respuestas) + ", correcta="

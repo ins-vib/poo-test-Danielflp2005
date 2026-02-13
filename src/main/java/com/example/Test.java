@@ -50,7 +50,7 @@ public class Test {
 
             Preguntas preguntactual = preguntas.get(posicionactual);
 
-            if (preguntactual.getCorrecta() == respuesta) {
+            if (preguntactual.getCorrecta() == respuesta -1 ) {
                 puntuacion++;
 
             }

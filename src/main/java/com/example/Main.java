@@ -19,6 +19,7 @@ public class Main {
 
         while (seguir) {
 
+            System.out.println();
             System.out.println(test.getEnunciadoPreguntaActual());
             String[] opciones = test.getRespostePreguntaActual();
 
